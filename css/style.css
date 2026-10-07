@@ -2,40 +2,80 @@
 
 h1 {
   color: darkslateblue;
-  font-size: 40px;
+  font-size: 50px;
+  text-align: center;
 }
 
 h2 {
-  color: teal;
-  font-size: 28px;
+  color: darkslateblue;
+  font-size: 35px;
+  text-align: center;
+
+}
+h3 {
+  color: darkslateblue;
+  font-size: 30px;
+  text-align: center;
 }
 
-nav a {
+#logo {
+  display: block;
+  margin: 20px auto;
+  width: 500px;
+  height: auto;
+}
+
+#hello p {
+  font-size: 25px;
+  text-align: center;
+}
+
+.ArtPhoto {
+  display: block;
+  margin: 20px auto;
+  width: auto;
+  height: 350px;
+}
+
+.artists p {
+  font-size: 25px;
+  text-align: center;
+}
+
+/* nav a {
   text-transform: uppercase;
   font-weight: bold;
-}
+} */
 
 footer {
-  background-color: #333333;
+  background-color: darkslateblue;
   color: white;
+  text-align: center;
+  height: 70px;
+  font-size: 20px;
+}
+
+.pages {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 /* ===== Step 3: Class Selectors ===== */
 
-.artist-card {
+/* .artist-card {
   border: 2px solid darkslateblue;
   border-radius: 10px;
   background-color: lavender;
-}
+} */
 
-.thumbnail {
+/* .thumbnail {
   border: 3px solid #333333;
   border-radius: 8px;
-}
+} */
 
 /* ===== Step 4: Id Selectors ===== */
 
-#vangogh h2 {
+/* #vangogh h2 {
   color: goldenrod;
 }
 
@@ -49,11 +89,11 @@ footer {
 
 #welcome-text {
   font-size: 22px;
-}
+} */
 
 /* ===== Step 5: Parent + Child Selectors ===== */
 
-header nav a {
+/* header nav a {
   color: darkslateblue;
 }
 
@@ -63,7 +103,7 @@ main article h2 {
 
 footer a {
   color: white;
-}
+} */
 
 /* ===== Step 6: Specificity Check ===== */
 
@@ -76,9 +116,9 @@ footer a {
   so it wins no matter which rule comes first in the file.
 */
 
-.section-title {
+/* .section-title {
   color: crimson;
-}
+} */
 
 /*
   Specificity scores (id, class, type):

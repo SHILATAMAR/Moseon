@@ -1,21 +1,29 @@
 /* ===== Step 2: Type Selectors ===== */
+body {
+  text-align: center;
+  list-style-position: inside;
+}
 
 h1 {
   color: darkslateblue;
   font-size: 50px;
-  text-align: center;
 }
 
 h2 {
   color: darkslateblue;
   font-size: 35px;
-  text-align: center;
-
 }
+
 h3 {
   color: darkslateblue;
   font-size: 30px;
-  text-align: center;
+  display: block;
+  clear: both;
+  width: 100%;
+}
+
+a {
+  font-weight: bold;
 }
 
 #logo {
@@ -42,88 +50,94 @@ h3 {
   text-align: center;
 }
 
-/* nav a {
-  text-transform: uppercase;
-  font-weight: bold;
-} */
+.pages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(84, 71, 168);
+}
+
+.pages li {
+  float: right;
+}
+.linkGallery {
+  font-size: 20px;
+}
+
+#ReuvenGalleryMin h2 {
+  color: blueviolet;
+}
+
+#NachumGalleryMin h2 {
+  color: rgb(92, 29, 150);
+}
+
+#MarkGalleryMin h2 {
+  color: rgb(167, 99, 232);
+}
+
+.pages li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.MaxGallery img {
+  display: block;
+  margin: 20px auto;
+  width: auto;
+  height: 700px;
+}
+
+.MinGallery img {
+  width: 200px;
+  height: auto;
+  display: inline-block;
+}
+
+.gallery-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+}
+
+.artist-card {
+  border: 2px solid darkslateblue;
+  background-color: beige;
+  border-radius: 15%;
+}
+
+.thumbnail {
+  border: 1px solid darkslateblue;
+  border-radius: 10%;
+}
 
 footer {
   background-color: darkslateblue;
   color: white;
   text-align: center;
-  height: 70px;
-  font-size: 20px;
+  font-size: 18px;
+  padding: 15px;
 }
-
-.pages {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-/* ===== Step 3: Class Selectors ===== */
-
-/* .artist-card {
-  border: 2px solid darkslateblue;
-  border-radius: 10px;
-  background-color: lavender;
-} */
-
-/* .thumbnail {
-  border: 3px solid #333333;
-  border-radius: 8px;
-} */
-
-/* ===== Step 4: Id Selectors ===== */
-
-/* #vangogh h2 {
-  color: goldenrod;
-}
-
-#monet h2 {
-  color: cornflowerblue;
-}
-
-#rembrandt h2 {
-  color: saddlebrown;
-}
-
-#welcome-text {
-  font-size: 22px;
-} */
-
-/* ===== Step 5: Parent + Child Selectors ===== */
-
-/* header nav a {
-  color: darkslateblue;
-}
-
-main article h2 {
-  font-size: 32px;
-}
-
-footer a {
-  color: white;
-} */
 
 /* ===== Step 6: Specificity Check ===== */
 
-/*
-  The "Visit Us" <h2> in visit.html has class="section-title".
-  Two rules try to color it:
-    h2             { color: teal; }     (type selector, Step 2)
-    .section-title { color: crimson; }  (class selector, below)
-  Crimson wins: a class selector is more specific than a type selector,
-  so it wins no matter which rule comes first in the file.
-*/
+/* כלל 1: Type Selector (ניקוד: 0,0,0,1) */
+h2 {
+  color: red ;
+}
 
-/* .section-title {
-  color: crimson;
-} */
+/* כלל 2 סותר: Class Selector (ניקוד: 0,0,1,0) */
+/* הכלל הזה מנצח כיוון ל-Class יש ניקוד ספציפיות גבוה יותר מ-Type */
+.artist-title {
+  color: darkslateblue;
+}
 
-/*
-  Specificity scores (id, class, type):
-    h2              -> (0, 0, 1)  one type
-    .artist-card    -> (0, 1, 0)  one class
-    #vangogh h2     -> (1, 0, 1)  one id + one type
-    header nav a    -> (0, 0, 3)  three types
-*/
+/* חישוב ניקוד ספציפיות ל-3 בוררים לדוגמה בפרויקט:
+   1. h2                      <- ניקוד: (0, 0, 0, 1)
+   2. .artist-card            <- ניקוד: (0, 0, 1, 0)
+   3. #ReuvenGalleryMin h2    <- ניקוד: (0, 1, 0, 1) [מנצח את כולם!]
